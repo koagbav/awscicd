@@ -7,7 +7,7 @@ pipeline {
        AWS_REGION = 'us-east-1'
        BRANCH_NAME = 'main'
        SCANNER_HOME = tool 'sonar-tool'
-       GIT_URL = 'https://github.com/kserge2001/geoapp.git'
+       GIT_URL = 'https://github.com/koagbav/awscicd.git'
        GITHUB_CREDENTIALS = 'github-Credentials'
        SONAQUBE_CRED = 'Sonar-cred'
        SONAQUBE_INSTALLATION = 'Sonar-server'
