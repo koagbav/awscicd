@@ -8,6 +8,8 @@ pipeline {
        BRANCH_NAME = 'main'
        SCANNER_HOME = tool 'sonar-tool'
        GIT_URL = 'https://github.com/koagbav/awscicd.git'
+       IMAGE_TAG = 'koagbav/awscicd'
+       IMAGE_VERSION = '${BUILD_NUMBER}'
        GITHUB_CREDENTIALS = 'github-Credentials'
        SONAQUBE_CRED = 'Sonar-cred'
        SONAQUBE_INSTALLATION = 'Sonar-server'
@@ -33,7 +35,7 @@ pipeline {
        }
         stage ('docker build'){
             steps{
-                sh 'docker build -t awscicd .'
+                sh 'docker build -t "${IMAGE_TAG}:${IMAGE_VERSION}" .'
                 sh 'docker images'
             }
         }
