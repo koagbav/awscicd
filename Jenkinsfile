@@ -22,15 +22,21 @@ pipeline {
        }
 
        stages{
-        stage('Checkout') {
+        stage('git Checkout') {
             steps {
               git branch: "${BRANCH_NAME}",\
-               credentialsId: "${GITHUB_CREDENTIALS}", \
-              url:  "${GIT_URL}"
+              url:  "${GIT_URL}",\
+            credentialsId: "${GITHUB_CREDENTIALS}"
+              
 
             }
        }
-
+        stage ('docker build'){
+            steps{
+                sh 'docker build -t awscicd .'
+                sh 'docker images'
+            }
+        }
        stage('unit test') {
             steps {
               sh 'mvn clean'
