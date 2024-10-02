@@ -9,7 +9,7 @@ pipeline {
        SCANNER_HOME = tool 'sonar-tool'
        GIT_URL = 'https://github.com/koagbav/awscicd.git'
        IMAGE_TAG = 'koagbav/awscicd'
-       IMAGE_VERSION = '${BUILD_NUMBER}'
+       IMAGE_VERSION = "${BUILD_NUMBER}"
        GITHUB_CREDENTIALS = 'github-Credentials'
        SONAQUBE_CRED = 'Sonar-cred'
        SONAQUBE_INSTALLATION = 'Sonar-server'
